@@ -12,4 +12,5 @@ class StudentsSerializers(serializers.ModelSerializer):
                   'email',
                   'phone_number',
                   'description',
-                  'gender']
+                  'gender',
+                  'course']

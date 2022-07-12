@@ -33,3 +33,5 @@ class Student(models.Model):
         self.first_name = self.first_name.capitalize()
         self.last_name = self.last_name.capitalize()
         super(Student,self).save()
+
+

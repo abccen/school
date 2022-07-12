@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-l8d2uobtllofvqh1#ye&fz)^fz^@r20=ig2*c-#4gkn0^+_6&0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,10 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party
     'rest_framework',
+    'django_filters',
+    'djoser',
+    'rest_framework.authtoken',
     # my apps
     'courses_app',
     'students_app',
-
+    'school_app',
+    'employee_app',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +78,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'school_project.wsgi.application'
+
+
+
+
 
 
 # Database
@@ -118,12 +126,12 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
-
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+}
+

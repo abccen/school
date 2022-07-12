@@ -8,6 +8,11 @@ class CoursesSerializers(serializers.ModelSerializer):
         model = Course
         fields = ['name', 'duration', 'price', 'is_active']
 
+
+
+
+
+
         # такое можно написать если инфа приходит с front
         # validators = [
         #     UniqueTogetherValidator(
